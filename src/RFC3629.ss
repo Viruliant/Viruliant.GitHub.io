@@ -3,7 +3,7 @@
 ;Copyright © 2014 Roy Pfund                                 All rights reserved.
 ;Use of this software and associated documentation  files  (the  "Software"), is
 ;governed by a MIT-style License(the "License") that can be found in the LICENSE
-;file. You should have received a copy of the License along with this Software.
+;file. You should have received a copy of the License along with this  Software.
 ;If not, see http://Viruliant.googlecode.com/git/LICENSE.txt
 ;_________________________________________________________R5RS SICP Compatiblity
 ;SICP-Book: goo.gl/AmyAhS SICP-Video-Lectures: goo.gl/3uwWXK R5RS: goo.gl/z6HMWx
@@ -32,41 +32,39 @@
 ;0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
 
 (define (PutUTF8Char thechar)
-	;arguments:
-	;errors   :
-	;Inputs   : a 24bit typecasted 21 bit unicode char < #x110000
+	;Input(s) : a 24bit typecasted 21 bit unicode char < #x110000
 	;Output(s): 1-4 calls putbyte() writing thechar in utf8
-	(define (writeContinuingOctet)
-		(putbyte (bitor #x80 (bitand #x3F thechar))
-		thechar = rol(thechar, 6))
+	(let (
+		((writeContinuingOctet N)
+			(putbyte (bitor #x80 (bitand #x3F (arithmetic-shift-right thechar N)))))
+	)
 	(cond
-		((< thechar #x80);1 byte character
-			(putbyte thechar)
+		((< thechar #x80)(;1 byte character
+			(putbyte thechar)))
 		((< thechar #x800)(;2 byte character
-			thechar = ror(thechar, 6); putbyte((uint8_t)thechar bitor #xC0)
-			(writeContinuingOctet)
+			(putbyte (bitor #xC0 (bitand #x1F (arithmetic-shift-right thechar 6))))
+			(writeContinuingOctet 0)))
 		((< thechar #x10000)(;3 byte character
-			thechar = ror(thechar, 12); putbyte((uint8_t)thechar bitor #xE0)
-			(writeContinuingOctet)
-			(writeContinuingOctet)
+			(putbyte (bitor #xE0 (bitand #x0F (arithmetic-shift-right thechar 12))))
+			(writeContinuingOctet 0)
+			(writeContinuingOctet 6)))
 		((< thechar #x110000)(;4 byte character
-			thechar = ror(thechar, 18)
-			putbyte(((uint8_t)thechar bitand #x07) bitor #xF0)
-			(writeContinuingOctet)
-			(writeContinuingOctet)
-			(writeContinuingOctet)
-		(else (return error))));invalid character
+			(putbyte (bitor #xF0 (bitand #x07 (arithmetic-shift-right thechar 18))))
+			(writeContinuingOctet 0)
+			(writeContinuingOctet 6)
+			(writeContinuingOctet 12)))
+		(else (return error)))));invalid character
 
-(define (GetUTF8Char)(call/cc (λ (return)
-	;arguments:
-	;errors   :
-	;Inputs   : the next 1-4 bytes taken from the getbyte() function are a valid RFC3629 sequence. or getbyte() returns EOF.
+(define (GetUTF8Char) (call/cc (λ (return)
+	;Input(s) : the next 1-4 bytes taken from the getbyte() function are a valid RFC3629 sequence. or getbyte() returns EOF.
 	;Output(s): error OR a 24bit typecasted 21 bit Unicode Code-Point < #x110000.
-	(define (ReadContinuingOctet)
-		(set! CurrentOctet (bitwise-xor #x80 (getbyte)))
-		(if (< CurrentOctet #x40);continuing byte sequence
-			(set! thechar (+ CurrentOctet (arithmetic-shift-left thechar 6))
-			(return error))
+	(let (
+		((ReadContinuingOctet)
+			(set! CurrentOctet (bitwise-xor #x80 (getbyte)))
+			(if (< CurrentOctet #x40);continuing byte sequence
+				(set! thechar (+ CurrentOctet (arithmetic-shift-left thechar 6))
+				(return error))))
+	)
 	(set! thechar (24bit 0))
 	(set! CurrentOctet (getbyte))
 	(cond ; 6 scenarios for 1st input byte
@@ -91,6 +89,6 @@
 			(if (< thechar #x10000) (return error));overlong
 			(if (> thechar #x110000) (return error));thechar is too large
 			(return thechar))
-		(else (return error)));invalid byte sequence
-))
+		(else (return error)))))));invalid byte sequence
+
 
