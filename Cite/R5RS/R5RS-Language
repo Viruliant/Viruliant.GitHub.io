@@ -1,0 +1,98 @@
+Index of R5RS Language Documentation
+	λ	9, 16, 41
+	force	32, 13
+	delay	32, 13
+	eval	35, 8
+	apply	32, 8, 43
+	set!	10, 16, 41
+	=>	10
+Syntax Tests
+	eqv?	17, 7, 10,
+	eq?	18, 10
+	equal?	19
+	procedure?	31, 6
+	symbol?	28, 6
+	Conventions
+		?	4
+		!	5
+		->	5
+Macros
+	syntax-rules	14, 17
+	define-syntax	17
+	let-syntax	14, 16
+	letrec-syntax	14, 16
+	...	5, 14
+	Force Delay Derived expressions & macros
+		if	10, 41
+		do	12, 44
+		begin	12, 16, 44
+		case	10, 43
+		else	10
+		cond	10, 15, 43
+		for-each	32
+		map	32
+		catch	34
+
+		lambda	9, 16, 41
+		define	16, 14
+		let		11, 12, 15,
+		let*	11, 16, 44
+		letrec	11, 16, 44
+Environment Procedures
+	null-environment	35
+	scheme-report-environment	35
+	interaction-environment	35
+	dynamic-wind	34, 33
+	call-with-values	34, 8, 43
+	values	34, 9
+	call-with-current-continuation	33, 8, 34,
+		call/cc	34
+Pairs and lists
+	'	8, 26
+	quote	8, 26
+	‘	13
+	,@	13
+	,	13, 26
+	quasiquote	13, 26
+	unquote	13, 26
+	unquote-splicing	13, 26
+	pair?		26, 6
+	null?		26
+	nil			25
+List Procedures
+	list	27
+	list->vector	31
+	list-ref	27
+	list-tail	27
+	list?	26
+	append	27
+	assoc	27
+	assq	27
+	assv	27
+	length	27, 20
+	member	27
+	memq	27
+	memv	27
+	reverse	27
+Vector Procedures
+	make-vector	31
+	vector	31
+	vector->list	31
+	vector-fill!	31
+	vector-length	31, 20
+	vector-ref	31
+	vector-set!	31
+	vector?	31, 6
+Cons Procedures
+	cons		26
+		car		26, 42
+		cdr		26
+		caar	26
+		cadr	26
+		Arbitrary compositions, up to four deep, are provided. 28 procedures in all.
+		cdddar	26
+		cddddr	26
+	setcar	42
+	set-car!	26
+	set-cdr!	26
+

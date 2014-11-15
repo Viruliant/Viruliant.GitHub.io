@@ -1,0 +1,151 @@
+Index of R5RS Default Environment Documentation
+
+Input Output Procedures
+	eof-object?	36
+	port?	6
+	input-port?	35
+	output-port?	35
+	open-input-file	36
+	open-output-file	36
+	load	37
+	read	36, 26, 39
+	write	37, 13
+	display	37
+	close-input-port	36
+	close-output-port	36
+	current-input-port	35
+	current-output-port	35
+	with-input-from-file	35
+	with-output-to-file	35
+	call-with-input-file	35
+	call-with-output-file	35
+	transcript-off	37
+	transcript-on	37
+Boolean Logic
+	#t	25
+	#f	25
+		and	11, 43
+		or	11, 43
+		not	25
+	boolean?	25, 6
+Binary, Octal, Decimal, & Hexadecimal
+	#b	21, 38
+	#o	21, 38
+	#d	21
+	#x	21, 39
+Math Procedures
+	Math Operators & Trigonometric Procedures
+		exp	23
+		expt	24
+		log	23
+		sqrt	24
+		*	22
+		+	22, 5, 42
+		-	22, 5
+		/	22, 5
+		modulo	22
+		quotient	22
+		remainder	22
+		<	21, 42
+		<=	21
+		=	21, 22
+		>	21
+		>=	21
+		acos	23
+		asin	23
+		atan	23
+		cos	23
+		sin	23
+		tan	23
+	Math Types
+		denominator	23
+		numerator	23
+		#e	21, 38
+		#i	21, 38
+		real?	21, 19
+		complex?	21, 19
+		rational?	21, 19
+		exact?	21
+		inexact?	21
+		number?	21, 6, 19
+		even?	22
+		negative?	22
+		odd?	22
+		positive?	22
+		zero?	22
+		integer?	21, 19
+			abs	22, 24
+			max	22
+			min	22
+			ceiling	23
+			floor	23
+			gcd	23
+			lcm	23
+	Math Type Conversions
+		angle	24
+		magnitude	24
+		rationalize	23
+		round	23
+		truncate	23
+		imag-part	24
+		inexact->exact	24, 20
+		exact->inexact	24
+		make-polar	24
+		make-rectangular	24
+		real-part	24
+
+String Procedures
+	list->string	30
+	make-string	30
+	number->string	24
+	string	30
+	string->list	30
+	string->number	24
+	string->symbol	28
+	string-append	30
+	string-ci<=?	30
+	string-ci<?	30
+	string-ci=?	30
+	string-ci>=?	30
+	string-ci>?	30
+	string-copy	30
+	string-fill!	31
+	string-length	30, 20
+	string-ref	30
+	string-set!	30, 28
+	string<=?	30
+	string<?	30
+	string=?	30
+	string>=?	30
+	string>?	30
+	string?	30, 6
+	substring	30
+	symbol->string	28, 7
+
+Character Procedures
+	char->integer	29
+	char-alphabetic?	29
+	char-ci<=?	29
+	char-ci<?	29
+	char-ci=?	29
+	char-ci>=?	29
+	char-ci>?	29
+	char-downcase	29
+	char-lower-case?	29
+	char-numeric?	29
+	char-ready?	36
+	char-upcase	29
+	char-upper-case?	29
+	char-whitespace?	29
+	char<=?	29
+	char<?	29
+	char=?	29
+	char>=?	29
+	char>?	29
+	char?	29, 6
+	integer->char	29
+	newline	37
+	peek-char	36
+	read-char	36
+	write-char	37
+
