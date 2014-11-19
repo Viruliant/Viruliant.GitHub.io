@@ -31,13 +31,11 @@
 ;0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx
 ;0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
 
-(define (PutUTF8Char thechar)
-	;Input(s) : a 24bit typecasted 21 bit unicode char < #x110000
-	;Output(s): 1-4 calls putbyte() writing thechar in utf8
-	(let (
+(define (PutUTF8Char thechar)(let (
 		((writeContinuingOctet N)
 			(putbyte (bitor #x80 (bitand #x3F (arithmetic-shift-right thechar N)))))
-	)
+	);Input(s): a 24bit typecasted 21 bit unicode char < #x110000
+	;Output(s): 1-4 calls putbyte() writing thechar in utf8
 	(cond
 		((< thechar #x80)(;1 byte character
 			(putbyte thechar)))
@@ -55,16 +53,14 @@
 			(writeContinuingOctet 12)))
 		(else (return error)))));invalid character
 
-(define (GetUTF8Char) (call/cc (λ (return)
-	;Input(s) : the next 1-4 bytes taken from the getbyte() function are a valid RFC3629 sequence. or getbyte() returns EOF.
-	;Output(s): error OR a 24bit typecasted 21 bit Unicode Code-Point < #x110000.
-	(let (
+(define (GetUTF8Char) (call/cc (λ (return) (let (
 		((ReadContinuingOctet)
 			(set! CurrentOctet (bitwise-xor #x80 (getbyte)))
 			(if (< CurrentOctet #x40);continuing byte sequence
 				(set! thechar (+ CurrentOctet (arithmetic-shift-left thechar 6))
 				(return error))))
-	)
+	);Input(s): the next 1-4 bytes taken from the getbyte() function are a valid RFC3629 sequence. or getbyte() returns EOF.
+	;Output(s): error OR a 24bit typecasted 21 bit Unicode Code-Point < #x110000.
 	(set! thechar (24bit 0))
 	(set! CurrentOctet (getbyte))
 	(cond ; 6 scenarios for 1st input byte
@@ -90,5 +86,4 @@
 			(if (> thechar #x110000) (return error));thechar is too large
 			(return thechar))
 		(else (return error)))))));invalid byte sequence
-
 

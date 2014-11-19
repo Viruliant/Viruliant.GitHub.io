@@ -1,4 +1,4 @@
-0________________________________________________________________________LICENSE
+﻿0________________________________________________________________________LICENSE
    Copyright © 2014 Roy Pfund                            All rights reserved.
 
    Permission is hereby granted, free of charge, to any  person  obtaining  a
@@ -42,7 +42,7 @@ file. You should have received a copy of the License along with  this  Software.
 If not, see http://Viruliant.googlecode.com/git/LICENSE.txt
 
 1.1___________________________________________________________BOILERPLATE DESIGN
-The following text/sources inflenced the boilerplate
+The following text/sources influenced the boilerplate
 
 // Copyright 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -66,5 +66,5 @@ http://someurl.com/MIT.txt?years=&Copyright_Owners=
 
 When in doubt copright everything and disallow use of anything also requiring  a
 signature of an NDA to even view any of your code. When not living in complete &
-utter fear of your friends, competitors, & neigbors; use this license.
+utter fear of your friends, competitors, & neighbors; use this license.
 

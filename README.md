@@ -5,8 +5,8 @@ file. You should have received a copy of the License along with this  Software.
 If not, see http://Viruliant.googlecode.com/git/LICENSE.txt
 
 
-This project depend on the following wonderful software:
---------------------------------------------------------
+This project depends on the following wonderful software:
+---------------------------------------------------------
 * https://github.com/feeley/gambit
 * https://github.com/cheusov/mk-configure
 * bmake

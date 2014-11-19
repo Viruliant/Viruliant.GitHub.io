@@ -21,4 +21,66 @@
 ;'promises' and how 'delay' & 'if' work with the following example of how a  new
 ;procedure unless could work
 
+;(define (unless p (name c) (name a))
+;        (cond ((not p) c)
+;              (else a)))
+
+;(delay e) (λ () e)
+;(force e) (e)
+
+
+
+
+;The R5RS Spec
+(define make-promise
+  (lambda (proc)
+    (let ((result-ready? #f)
+          (result #f))
+      (lambda ()
+        (if result-ready?
+            result
+            (let ((x (proc)))
+              (if result-ready?
+                  result
+                  (begin (set! result-ready? #t)
+                         (set! result x)
+                         result))))))))
+
+(force promise)
+; Forces the value of promise. If no value has been computed  for  the  promise,
+; then a value is computed and returned. The value of the promise is cached  (or
+; “memoized”) so that if it is forced a second time, the previously computed
+; value is returned.
+(define force
+  (lambda (object)
+    (object)))
+
+(delay expression)
+; The delay construct is used together with the  procedure  force  to  implement
+; lazy evaluation or call by need. (delay expression ) returns an object  called
+; a promise which at some point in  the  future  may  be  asked  (by  the  force
+; procedure) to evaluate expression ,  and  deliver  the  resulting  value.  The
+; effect of expression returning multiple values is unspecified.
+(define-syntax delay
+  (syntax-rules ()
+    ((delay expression)
+     (make-promise (lambda () expression)))))
+
+
+
+
+
+(eval expression environment-specifier)
+; Evaluates expression in the  specified  environment  and  returns  its  value.
+; Expression must  be  a  valid  Scheme  expression  represented  as  data,  and
+; environment-specifier must be a value returned by one of the three  procedures
+; described below. Implementations  may  extend  eval  to  allow  non-expression
+; programs (definitions) as the first argument and  to  allow  other  values  as
+; environments, with the restriction that eval is  not  allowed  to  create  new
+; bindings in the environments associated with null-environment or
+; scheme-report-environment.
+
+(apply proc arg1 . . . args)
+; Proc must be a procedure and args must be a list. Calls proc with the elements
+; of the list (append (list arg 1 . . . ) args) as the actual arguments.
 
