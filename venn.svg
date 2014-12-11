@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--example/venn.svg?JointDenial=green&ConverseNonimplication=blue&Nonimplication=red&Conjuction=purple-->
+<svg xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:svg="http://www.w3.org/2000/svg"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+width="74.325mm"
+height="52.556mm"
+version="1.1">
+<title>Venn Diagram</title>
+<desc>Takes parameters from parent document's embedding element. JointDenial ConverseNonimplication Nonimplication Conjuction.</desc>
+	<rect id="JointDenial"
+		fill="param(JointDenial) white" x="0" y="0" width="100%" height="100%" stroke="black" stroke-width="0mm"/>
+	<circle id="Nonimplication"
+		fill="param(Nonimplication) white" r="20.358mm" cx="29.294mm" cy="26.278mm" stroke="none"/>
+	<circle id="ConverseNonimplication"
+		fill="param(ConverseNonimplication) white" r="20.358mm" cx="45.742mm" cy="26.278mm" stroke="none"/>
+	<circle id="Conjuction"
+		fill="param(Conjuction) white" r="20.358mm" cx="45.742mm" cy="26.278mm" stroke="none" clip-path="url(#ConjuctionClip)"/><clipPath id="ConjuctionClip"><circle r="19.858mm" cx="29.294mm" cy="26.278mm" stroke="none"/></clipPath>
+<!--Borders-->
+	<circle fill="none" r="19.858mm" cx="29.294mm" cy="26.278mm" stroke-width="1mm" stroke="black"/>
+	<circle fill="none" r="19.858mm" cx="45.742mm" cy="26.278mm" stroke-width="1mm" stroke="black"/>
+<!--<script xmlns="http://www.w3.org/2000/svg" type="text/ecmascript" xlink:href="http://www.w3.org/TR/SVGParamPrimer/param.js"/>-->
+<!--http://www.w3.org/TR/SVGParamPrimer/param.js"--><script type="text/javascript"><![CDATA[
+var a=[];if(document.defaultView.frameElement)for(var g=document.defaultView.frameElement.getElementsByTagName("param"),h=0,aa=g.length;aa>h;h++){var k=g[h],l=k.getAttribute("name"),m=k.getAttribute("value");a[l]=m}var p=document.defaultView.location.href;if(-1!=p.indexOf("?"))for(var q=p.split("?")[1].split(/&|;/),r=0,ba=q.length;ba>r;r++){var k=q[r],s=k.split("="),l=unescape(s[0]),m=unescape(s[1]);a[l]=m}
+for(var ca=[],t=[],u=document.documentElement.getElementsByTagName("*"),v=0,da=u.length;da>v;v++){var y=u[v];if("use"!=y.localName)z(y,a);else{var A;var B=y,C=ca,D=v;shadowParams=a;for(var E=!1,F=B.childNodes,G=0,ea=F.length;ea>G;G++){var H=F[G];if(1==H.nodeType&&"param"==H.localName){var fa=H.getAttribute("name"),ga=H.getAttribute("value");shadowParams[fa]=ga;E=!0}}var I=B.getAttribute("parameters");if(I)for(var J=I.split(";"),K=0,ha=J.length;ha>K;K++){var L=J[K].split(":");shadowParams[L[0]]=L[1];
+E=!0}if(E){var ia=B.getAttributeNS("http://www.w3.org/1999/xlink","href").replace("#",""),M=document.getElementById(ia).cloneNode(!0);z(M,shadowParams,!0);for(var O=document.createElementNS("http://www.w3.org/2000/svg","g"),P=document.createElementNS("http://www.w3.org/2000/svg","g"),Q=0,ja=B.attributes.length;ja>Q;Q++){var R=B.attributes[Q];"content-value"!=R.localName&&"params"!=R.localName&&"parameters"!=R.localName&&"href"!=R.localName&&"x"!=R.localName&&"y"!=R.localName&&P.setAttribute(R.name,
+R.value)}var ka=B.getAttribute("x"),la=B.getAttribute("y");O.setAttribute("transform","translate("+ka+","+la+")");P.appendChild(M);O.appendChild(P);for(var S=M.getElementsByTagName("*"),T=0,ma=S.length;ma>T;T++){var U=S[T];z(U,shadowParams,!0);for(var V=0,na=U.attributes.length;na>V;V++){var R=U.attributes[V],W=R.value;"id"==R.localName&&(U.setAttribute(R.name,W+"__"+D),C[W]=W+"__"+D);if(-1!=W.indexOf("url(#"))for(uid in C)-1!=W.indexOf("url(#"+uid+")")&&U.setAttributeNS(R.namespaceURI,R.name,"url(#"+
+C[uid]+")")}}A=O}else A=null;A&&t.push([y,A])}}for(var X=0,oa=t.length;oa>X;X++){var Y=t[X][0];A=t[X][1];Y.setAttribute("display","none");Y.nextSibling?Y.parentNode.insertBefore(A,Y.nextSibling):Y.parentNode.appendChild(A)}function Z(b,w){var f=b.split(")"),n=f[0].replace("param(",""),x=null;f[1]&&(x=f[1].replace(/^\s\s*/,"").replace(/\s\s*$/,""));(f=w[n])||(f=x);return f}
+function z(b,w,f){for(var n=0,x=b.attributes.length;x>n;n++){var c=b.attributes[n];if(c){var e=c.value;if(-1!=e.indexOf("param("))if("params"==c.localName){if(f)for(var c=e.split(";"),e=0,pa=c.length;pa>e;e++){var d=c[e].split(":"),N=d[0],d=Z(d[1],w),$=null;if("href"==N||"xlink:href"==N)$="http://www.w3.org/1999/xlink";b.setAttributeNS($,N,d)}}else d=Z(e,w),null!=d&&""!=d&&("content-value"==c.localName?b.replaceChild(document.createTextNode(d),b.firstChild):(b.setAttributeNS(c.namespaceURI,c.name,
+d),(d=b.getAttribute("params"))?b.setAttribute("params",d+";"+c.name+":"+e):b.setAttribute("params",c.name+":"+e)))}}};
+]]></script>
+</svg>
