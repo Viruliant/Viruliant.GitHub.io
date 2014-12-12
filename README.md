@@ -16,16 +16,29 @@ With [N1256](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf) as its t
 Eventually all instances of and/or/not english boolean and set  logic  notations
 will be replaced with the following language agnostic symbols.
 
-	|α↓β|α⇐β|α⇒β|α⇑β|---|Operator               |---|Negation             |
-	|---|---|---|---|---|-----------------------|---|---------------------|
-	|1  |0  |0  |0  |α↓β|Joint denial           |α⇓β|Disjunction          |
-	|0  |1  |0  |0  |α⇐β|Converse Nonimplication|α←β|Converse Implication |
-	|0  |0  |1  |0  |α⇒β|Nonimplication         |α→β|Implication          |
-	|0  |0  |0  |1  |α⇑β|Conjuction             |α↑β|Alternative denial   |
-	|0  |0  |1  |1  |α  |Proposition α          |¬α |Negation α           |
-	|0  |1  |0  |1  |β  |Proposition β          |¬β |Negation β           |
-	|1  |0  |0  |1  |α↔β|Biconditional          |α⇔β|Exclusive Disjunction|
-	|1  |1  |1  |1  |⊤  |Tautology              |⊥  |Contradiction        |
+|α↓β|α⇐β|α⇒β|α⇑β|---|Operator               |---|Negation             |
+|---|---|---|---|---|-----------------------|---|---------------------|
+|1  |0  |0  |0  |α↓β|Joint denial           |α⇓β|Disjunction          |
+|0  |1  |0  |0  |α⇐β|Converse Nonimplication|α←β|Converse Implication |
+|0  |0  |1  |0  |α⇒β|Nonimplication         |α→β|Implication          |
+|0  |0  |0  |1  |α⇑β|Conjuction             |α↑β|Alternative denial   |
+|0  |0  |1  |1  |α  |Proposition α          |¬α |Negation α           |
+|0  |1  |0  |1  |β  |Proposition β          |¬β |Negation β           |
+|1  |0  |0  |1  |α↔β|Biconditional          |α⇔β|Exclusive Disjunction|
+|1  |1  |1  |1  |⊤  |Tautology              |⊥  |Contradiction        |
+
+|---|Venn Diagram|---|
+|---|------------|---|
+|α↓β|![](venn.svg?JointDenial=#666&ConverseNonimplication=#FFF&Nonimplication=#FFF&Conjuction=#FFF)|α⇓β|
+|α⇐β|![](venn.svg?JointDenial=#FFF&ConverseNonimplication=#666&Nonimplication=#FFF&Conjuction=#FFF)|α←β|
+|α⇒β|![](venn.svg?JointDenial=#FFF&ConverseNonimplication=#FFF&Nonimplication=#666&Conjuction=#FFF)|α→β|
+|α⇑β|![](venn.svg?JointDenial=#FFF&ConverseNonimplication=#FFF&Nonimplication=#FFF&Conjuction=#666)|α↑β|
+|α↔β|![](venn.svg?JointDenial=#666&ConverseNonimplication=#FFF&Nonimplication=#FFF&Conjuction=#666)|α⇔β|
+|α  |![](venn.svg?JointDenial=#FFF&ConverseNonimplication=#FFF&Nonimplication=#666&Conjuction=#666)|¬α |
+|β  |![](venn.svg?JointDenial=#FFF&ConverseNonimplication=#666&Nonimplication=#FFF&Conjuction=#666)|¬β |
+|⊤  |![](venn.svg?JointDenial=#666&ConverseNonimplication=#666&Nonimplication=#666&Conjuction=#666)|⊥  |
+
+
 
 [dlopen_self.c](Cite/mkconfExample/dlopen_self.c)-
 Shows how to use dlsym to examine the running executable's properties. This lets
