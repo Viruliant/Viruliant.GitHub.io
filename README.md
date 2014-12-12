@@ -4,15 +4,25 @@ governed by a MIT-style License(the "License") that can be found in the LICENSE
 file. You should have received a copy of the License along with this  Software.
 If not, see http://Viruliant.googlecode.com/git/LICENSE.txt
 
-In addition to being Meta-Circular Viruliant is to provide the abilities seen in
+Viruliant
+---------
+Viruliant is a translator from a [Subset of R5RS](/Cite/R5RS/R5RS-Language) to a
+yet to be defined subset of [C99:TC3](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf) but in the style of 
+[/Cite/mkconfExample](Cite/mkconfExample) All in the spirit of [rolling out for free(after you've waded through muck)](http://youtu.be/h6Z7vx9iUB8?t=1h17m33s)
+
+It is supposed to do this, using an Earley Parser similar to the one descibed by
+[Keshav](http://youtu.be/eeZ3URxd8Wc). The 1st pass of the compiler will resolve
+ALL macros, AND create a notation to put into comments so that the process can
+be reversed.
+
+This is a work in progress.
+
+Viruliant is to provide the abilities seen in
 [Ben Swift Debugging AND Recompiling the currently running application](http://vimeo.com/99891379).
 [Sorensons Acoustic DUAL Piano Scheme Setup Video(NOT in Stereo)](http://youtu.be/yY1FSsUV-8c?t=140s) may serve as a more layman's description of what this might look like, or at least how it should sound.
-It is supposed to do this, using an Earley Parser similar to the one descibed by
-[Keshav](http://youtu.be/eeZ3URxd8Wc). All in the spirit of 
 
-With [N1256](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf) as its target, but in the style of 
-[/Cite/mkconfExample](Cite/mkconfExample)
-
+Boolean & Set Logic
+-------------------
 Eventually all instances of and/or/not english boolean and set  logic  notations
 will be replaced with the following language agnostic symbols.
 
@@ -29,17 +39,18 @@ will be replaced with the following language agnostic symbols.
 
 |---|Venn Diagram|---|
 |---|------------|---|
-|α↓β|![](venn.svg?JointDenial=#666&ConverseNonimplication=#FFF&Nonimplication=#FFF&Conjuction=#FFF)|α⇓β|
-|α⇐β|![](venn.svg?JointDenial=#FFF&ConverseNonimplication=#666&Nonimplication=#FFF&Conjuction=#FFF)|α←β|
-|α⇒β|![](venn.svg?JointDenial=#FFF&ConverseNonimplication=#FFF&Nonimplication=#666&Conjuction=#FFF)|α→β|
-|α⇑β|![](venn.svg?JointDenial=#FFF&ConverseNonimplication=#FFF&Nonimplication=#FFF&Conjuction=#666)|α↑β|
-|α↔β|![](venn.svg?JointDenial=#666&ConverseNonimplication=#FFF&Nonimplication=#FFF&Conjuction=#666)|α⇔β|
-|α  |![](venn.svg?JointDenial=#FFF&ConverseNonimplication=#FFF&Nonimplication=#666&Conjuction=#666)|¬α |
-|β  |![](venn.svg?JointDenial=#FFF&ConverseNonimplication=#666&Nonimplication=#FFF&Conjuction=#666)|¬β |
-|⊤  |![](venn.svg?JointDenial=#666&ConverseNonimplication=#666&Nonimplication=#666&Conjuction=#666)|⊥  |
+|α↓β|![](venn.svg?JointDenial=#666&amp;ConverseNonimplication=#FFF&amp;Nonimplication=#FFF&amp;Conjuction=#FFF)|α⇓β|
+|α⇐β|![](venn.svg?JointDenial=#FFF&amp;ConverseNonimplication=#666&amp;Nonimplication=#FFF&amp;Conjuction=#FFF)|α←β|
+|α⇒β|![](venn.svg?JointDenial=#FFF&amp;ConverseNonimplication=#FFF&amp;Nonimplication=#666&amp;Conjuction=#FFF)|α→β|
+|α⇑β|![](venn.svg?JointDenial=#FFF&amp;ConverseNonimplication=#FFF&amp;Nonimplication=#FFF&amp;Conjuction=#666)|α↑β|
+|α↔β|![](venn.svg?JointDenial=#666&amp;ConverseNonimplication=#FFF&amp;Nonimplication=#FFF&amp;Conjuction=#666)|α⇔β|
+|α  |![](venn.svg?JointDenial=#FFF&amp;ConverseNonimplication=#FFF&amp;Nonimplication=#666&amp;Conjuction=#666)|¬α |
+|β  |![](venn.svg?JointDenial=#FFF&amp;ConverseNonimplication=#666&amp;Nonimplication=#FFF&amp;Conjuction=#666)|¬β |
+|⊤  |![](venn.svg?JointDenial=#666&amp;ConverseNonimplication=#666&amp;Nonimplication=#666&amp;Conjuction=#666)|⊥  |
 
 
-
+mkconfExample
+-------------
 [dlopen_self.c](Cite/mkconfExample/dlopen_self.c)-
 Shows how to use dlsym to examine the running executable's properties. This lets
 you, e.g., look up one of your own global variables by its string *name*,  which
