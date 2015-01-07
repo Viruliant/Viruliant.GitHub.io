@@ -1,7 +1,12 @@
-body {	height:100%; width:100%; margin:0em; border:0em; padding:0em;
-		background:#FFFFFF url(./spin.webp) repeat center center scroll;
+body {	height:100%; width:100%; margin:0; border:0; padding:0;
+		background:#FFFFFF url(./spin.gif) repeat center center scroll;
 }
-#Content {	
-			height:100%; width:80%; margin:0em auto; border:0em; padding:2em;
-			background:#FFFFFF none;
+#Content {	height:100%; width:80%; border:0; padding:2em;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			min-height:100%;
+/*			background:#FFFFFF none;*/
+			background:"#333";
+			color:"#CCC";
 }
