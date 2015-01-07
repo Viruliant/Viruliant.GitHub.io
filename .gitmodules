@@ -1,0 +1,15 @@
+[submodule "requirejs"]
+	path = requirejs
+	url = https://github.com/jrburke/requirejs.git
+[submodule "EpicEditor"]
+	path = EpicEditor
+	url = https://github.com/OscarGodson/EpicEditor.git
+[submodule "text"]
+	path = text
+	url = https://github.com/requirejs/text
+[submodule "i18n"]
+	path = i18n
+	url = https://github.com/requirejs/i18n
+[submodule "domready"]
+	path = domready
+	url = https://github.com/requirejs/domready

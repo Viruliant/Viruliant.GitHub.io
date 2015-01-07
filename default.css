@@ -1,0 +1,7 @@
+body {	height:100%; width:100%; margin:0em; border:0em; padding:0em;
+		background:#FFFFFF url(./spin.webp) repeat center center scroll;
+}
+#Content {	
+			height:100%; width:80%; margin:0em auto; border:0em; padding:2em;
+			background:#FFFFFF none;
+}
