@@ -14,12 +14,18 @@ MinJSLib.github.io/gh-template
 <script src="./showdown/compressed/Showdown.min.js"></script>
 <!--<script src="requirejs/require.js"></script>-->
 <script src="./default.js"></script><script>/* <![CDATA[ Custom JS*/window.onload = function() {
-	$( "#Content" ).tabs({// http://jqueryui.com/tabs/
-		event: "mouseover"
+	$( "#Content" ).tabs({ event: "mouseover" });// http://jqueryui.com/tabs/
+
+	//Setup Ace Editor
+	var Editor = ace.edit("Editor");
+	Editor.setTheme("ace/theme/twilight");
+	Editor.getSession().setMode("ace/mode/markdown");
+
+	//startup showdownjs to reset article div contents on manuscript changes
+	var converter = new Showdown.converter();
+	Editor.getSession().on('change', function(e) {
+		document.getElementById("Article").innerHTML = converter.makeHtml(Editor.getValue())
 	});
-	var editor = ace.edit("editor");
-	editor.setTheme("ace/theme/twilight");
-	editor.getSession().setMode("ace/mode/markdown");
 };/* ]]> */</script>
 <!--____________________________________________________________--></head><body>
 <div id="Content">
@@ -27,7 +33,5 @@ MinJSLib.github.io/gh-template
 		<li><a href="#Manuscript">Manuscript</a></li></ul>
 	<div id="Article"></div>
 	<div id="Manuscript">
-		<div id="editor"></div>
-	</div>
-</div>
+		<div id="Editor"></div></div></div>
 <!--___________________________________________________________--></body></html>
