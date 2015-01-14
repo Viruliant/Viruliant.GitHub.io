@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><!--_________________--><title>
 MinJSLib.github.io/gh-template
-</title><meta name="description" content="Github Pages Template using plaintext JS .md files with client-side JS markdown for styling">
+</title><meta name="description" content="Github Pages Template using client-side JS markdown for styling  plaintext .md files">
 <!--___________________________________________________________________Styles-->
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/trontastic/jquery-ui.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="./default.css"/>
@@ -12,20 +12,27 @@ MinJSLib.github.io/gh-template
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 <script src="./ace-builds/src-min-noconflict/ace.js"></script>
 <script src="./showdown/compressed/Showdown.min.js"></script>
+<script src="./showdown/compressed/extensions/table.min.js"></script>
 <!--<script src="requirejs/require.js"></script>-->
 <script src="./default.js"></script><script>/* <![CDATA[ Custom JS*/window.onload = function() {
 	$( "#Content" ).tabs({ event: "mouseover" });// http://jqueryui.com/tabs/
 
-	//Setup Ace Editor
+	//Setup Manuscript Editor
 	var Editor = ace.edit("Editor");
 	Editor.setTheme("ace/theme/twilight");
 	Editor.getSession().setMode("ace/mode/markdown");
 
-	//startup showdownjs to reset article div contents on manuscript changes
-	var converter = new Showdown.converter();
+	//startup showdownjs to reset Article contents on Manuscript changes
+	var converter = new Showdown.converter({ extensions: ['table'] });
 	Editor.getSession().on('change', function(e) {
 		document.getElementById("Article").innerHTML = converter.makeHtml(Editor.getValue())
+		//MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Article"])
+		//$( "Article" ).children().addClass("ui-tabs-panel ui-widget-content ui-corner-bottom");
 	});
+
+	//set contents of manuscript to "index.md" file contents
+	jQuery.get('index.md', function(data) { Editor.setValue(data); });
+
 };/* ]]> */</script>
 <!--____________________________________________________________--></head><body>
 <div id="Content">

@@ -1,17 +1,21 @@
 # Github Pages Template
 
-___
+____________
 ## Chapter 1
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
 
-\\[e^x =\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^{n} = \sum_{n=0}^{\infty} \left( \frac{x^n}{n!} \right) = \frac{x^n}{0!} + \frac{x^n}{1!} + \frac{x^n}{2!} + \frac{x^n}{3!} + \text{⋅ ⋅ ⋅}\\]
+\\\\[e^x =\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^{n} = \sum_{n=0}^{\infty} \left( \frac{x^n}{n!} \right) = \frac{x^n}{0!} + \frac{x^n}{1!} + \frac{x^n}{2!} + \frac{x^n}{3!} + \text{⋅ ⋅ ⋅}\\\\]
 
-___
+|Some   |Table  |
+|-------|-------|
+|Example|Content|
+
+____________
 ## Chapter 2
 
-<object type="image/svg+xml" data="map.svg?y=255&x=172"></object>
+<object type="image/svg+xml" data="map.svg?x=400&y=130"></object>
 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
