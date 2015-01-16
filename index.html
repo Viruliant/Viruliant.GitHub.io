@@ -21,24 +21,27 @@ MinJSLib.github.io/gh-template
 	var Editor = ace.edit("Editor");
 	Editor.setTheme("ace/theme/twilight");
 	Editor.getSession().setMode("ace/mode/markdown");
+	//set contents of Manuscript to "index.md" file contents
+	jQuery.get('index.md', function(data) { Editor.setValue(data); });
 
 	//startup showdownjs to reset Article contents on Manuscript changes
 	var converter = new Showdown.converter({ extensions: ['table'] });
 	Editor.getSession().on('change', function(e) {
 		document.getElementById("Article").innerHTML = converter.makeHtml(Editor.getValue())
 		//MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Article"])
-		//$( "Article" ).children().addClass("ui-tabs-panel ui-widget-content ui-corner-bottom");
+		//$("#Article").children().addClass("ui-tabs-panel ui-widget-content ui-corner-bottom");
 	});
-
-	//set contents of manuscript to "index.md" file contents
-	jQuery.get('index.md', function(data) { Editor.setValue(data); });
-
 };/* ]]> */</script>
 <!--____________________________________________________________--></head><body>
-<div id="Content">
-	<ul><li><a href="#Article">Article</a></li>
-		<li><a href="#Manuscript">Manuscript</a></li></ul>
-	<div id="Article"></div>
-	<div id="Manuscript">
-		<div id="Editor"></div></div></div>
+<div id="wrap">
+	<div id="container">
+		<div id="header"></div>
+		<div id="Content">
+			<ul><li><a href="#Article">Article</a></li>
+				<li><a href="#Manuscript">Manuscript</a></li></ul>
+			<div id="Article"></div>
+			<div id="Manuscript">
+				<div id="Editor"></div></div></div>
+		</div></div>
+<div id="footer"></div>
 <!--___________________________________________________________--></body></html>
