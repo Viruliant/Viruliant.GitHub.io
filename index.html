@@ -2,9 +2,23 @@
 MinJSLib.github.io/gh-template
 </title><meta name="description" content="Github Pages Template using client-side JS markdown for styling  plaintext .md files">
 <!--___________________________________________________________________Styles-->
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/trontastic/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="./jquery-ui-1.11.2.custom/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="./jquery-ui-1.11.2.custom/jquery-ui.theme.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="./default.css"/>
 <style type="text/css">/* <![CDATA[ Custom Styling*/
+#Page-Table { min-height:100%; width:100%; margin:0; }
+#Page-Table, #Content, #Left, #Right, #Header, #Footer, #Editor, #Manuscript { height:100%;
+	top: 0; bottom: 0; left: 0; right: 0; position: relative;
+	border:0; margin:0; padding:0;
+}
+#Page-Table, #Left-cell, #Right-cell, #Content-cell, #Header-cell, #Footer-cell {
+	border:0; padding:0; border-collapse: collapse;
+}
+#Left-cell, #Right-cell { width:10%; }
+#Content-cell { width:80%; }
+#Header-cell, #Footer-cell { height:64px; }
+
+#Header, #Footer { background: #FFF; }
 /* ]]> */</style>
 <!--__________________________________________________________________Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -31,17 +45,25 @@ MinJSLib.github.io/gh-template
 		//MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Article"])
 		//$("#Article").children().addClass("ui-tabs-panel ui-widget-content ui-corner-bottom");
 	});
+//	Editor.resize();
 };/* ]]> */</script>
 <!--____________________________________________________________--></head><body>
-<div id="wrap">
-	<div id="container">
-		<div id="header"></div>
-		<div id="Content">
-			<ul><li><a href="#Article">Article</a></li>
-				<li><a href="#Manuscript">Manuscript</a></li></ul>
-			<div id="Article"></div>
-			<div id="Manuscript">
-				<div id="Editor"></div></div></div>
-		</div></div>
-<div id="footer"></div>
+<table id="Page-Table"><!--http://i.stack.imgur.com/GAZTr.jpg-->
+	<tr><td id="Header-cell" colspan="3"><div id="Header"></div></td></tr>
+	<tr>
+		<td id="Left-cell"><div id="Left"></div></td>
+		<td id="Content-cell">
+			<div id="Content">
+				<ul><li><a href="#Article">Article</a></li>
+					<li><a href="#Manuscript">Manuscript</a></li></ul>
+				<div id="Article"></div>
+				<div id="Manuscript">
+					<div id="Editor"></div>
+				</div>
+			</div>
+		</td>
+		<td id="Right-cell"><div id="Right"></div></td>
+	</tr>
+	<tr><td id="Footer-cell" colspan="3"><div id="Footer"></div></td></tr>
+</table>
 <!--___________________________________________________________--></body></html>

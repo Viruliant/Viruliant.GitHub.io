@@ -1,4 +1,4 @@
-# Github Pages Template
+# [Github Pages Template](https://github.com/MinJSLib/gh-template)
 
 ______________
 ## gh-template
@@ -9,3 +9,30 @@ The built in Github markdown displayer won't allow stuff like:
 This is template to allow you to do almost anything, including on your own server.
 
 To see what this looks like go to [minjslib.github.io/gh-template](http://minjslib.github.io/gh-template/)
+
+____________
+## Chapter 1
+
+This chapter and the following chapter is just example markdown to show what all [gh-template](https://github.com/MinJSLib/gh-template)
+can do.
+
+\\\\[e^x =\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^{n} = \sum_{n=0}^{\infty} \left( \frac{x^n}{n!} \right) = \frac{x^n}{0!} + \frac{x^n}{1!} + \frac{x^n}{2!} + \frac{x^n}{3!} + \text{⋅ ⋅ ⋅}\\\\]
+
+|Some   |Table  |
+|-------|-------|
+|Example|Content|
+
+____________
+## Chapter 2
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
+
+<object type="image/svg+xml" data="map.svg?x=400&y=130"></object>
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+
+![Alt text](/spin.gif)
