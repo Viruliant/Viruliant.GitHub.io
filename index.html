@@ -36,7 +36,7 @@ MinJSLib.github.io/gh-template
 	Editor.setTheme("ace/theme/twilight");
 	Editor.getSession().setMode("ace/mode/markdown");
 	//set contents of Manuscript to "index.md" file contents
-	jQuery.get('index.md', function(data) { Editor.setValue(data); });
+	jQuery.get('README.md', function(data) { Editor.setValue(data); });
 
 	//startup showdownjs to reset Article contents on Manuscript changes
 	var converter = new Showdown.converter({ extensions: ['table'] });
