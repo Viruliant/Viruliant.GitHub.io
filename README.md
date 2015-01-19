@@ -1,4 +1,4 @@
-# [Github Pages Template](https://github.com/MinJSLib/gh-template)
+# Github Pages Template
 
 ______________
 ## gh-template
@@ -9,7 +9,8 @@ The built in Github markdown displayer won't allow stuff like:
 
 This is a template to allow you to do almost anything, including on your own server. Just use [NodeJS](http://nodejs.org/) and the included `gh-template-node.js` file
 
-To see what this looks like go to [minjslib.github.io/gh-template](http://minjslib.github.io/gh-template/)
+### Code is @[github.com/MinJSLib/gh-template](https://github.com/MinJSLib/gh-template)
+### Demo is @[minjslib.github.io/gh-template](http://minjslib.github.io/gh-template/)
 
 ____________
 ## Chapter 1
@@ -36,4 +37,4 @@ aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in volup
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
-![Alt text](/spin.gif)
+![](./spin.gif)
