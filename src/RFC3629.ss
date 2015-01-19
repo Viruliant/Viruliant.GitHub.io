@@ -16,15 +16,13 @@
 ;__________________________________________________________________goo.gl/i0fSeQ
 (define (current-continuation)(call/cc (λ (cc) (cc cc))))(define fail-stack '())
 (define (assert condition) (if (not condition) (fail) #t))
-(define (fail); fail : -> ...
-	(if (not (pair? fail-stack))
+(define (fail) (if (not (pair? fail-stack)); fail : -> ...
 		(error "back-tracking stack exhausted!")
 		(begin
 			(let ((back-track-point (car fail-stack)))
 				(set! fail-stack (cdr fail-stack))
 				(back-track-point back-track-point)))))
-(define (amb choices); amb : list[a] -> a
-	(let ((cc (current-continuation)))
+(define (amb choices) (let ((cc (current-continuation))); amb : list[a] -> a
 		(cond	((null? choices) (fail))
 				((pair? choices) (let ((choice (car choices)))
 					(set! choices (cdr choices))

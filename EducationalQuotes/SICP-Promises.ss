@@ -42,6 +42,41 @@
 ;(delay e) (λ () e)
 ;(force e) (e)
 
+;In this case, we're going to add a feature.
+;42:53We're going to add the feature of, by name parameters, if you
+;42:56will, or delayed parameters.
+;43:00Because, in fact, the default in our Lisp system is by the
+;43:05value of a pointer.
+;43:08A pointer is copied, but the data structure it
+;43:10points at is not.
+;43:13But I'd like to, in fact, show you is how you add name
+;43:17arguments as well.
+;43:19Now again, why would we need such a thing?
+;43:23Well supposing we wanted to invent certain kinds of what
+;43:26otherwise would be special forms, reserve words?
+;43:29But I'd rather not take up reserve words.
+;43:32I want procedures that can do things like if.
+;43:36If is special, or cond, or whatever it is.
+;43:39It's the same thing.
+;43:40It's special in that it determines whether or not to
+;43:43evaluate the consequent or the alternative based on the value
+;43:48of the predicate part of an expression.
+;43:50So taking the value of one thing determines whether or
+;43:54not to do something else.
+;43:57Whereas all the procedures like plus, the ones that we
+;44:00can define right now, evaluate all of their arguments before
+;44:05application.
+;44:08So, for example, supposing I wish to be able to define
+;44:11something like the reverse of if in terms of if.
+;44:19Call it unless.
+;44:20
+;44:24We've a predicate, a consequent, and an
+;44:26alternative.
+;44:28Now what I would like to sort of be able to do is say-- oh,
+;44:30I'll do it in terms of cond.
+;44:32Cond, if not the predicate, then take the consequent,
+;44:41otherwise, take the alternative.
+
 
 
 
