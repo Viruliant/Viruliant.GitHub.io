@@ -7,7 +7,7 @@ MinJSLib.github.io/gh-template
 <link rel="stylesheet" type="text/css" href="./default.css"/>
 <style type="text/css">/* <![CDATA[ Custom Styling*/
 #Page-Table { min-height:100%; width:100%; margin:0; }
-#Page-Table, #Content, #Left, #Right, #Header, #Footer, #Manuscript, #Manuscript { height:100%;
+#Page-Table, #Content, #Left, #Right, #Header, #Footer { height:100%;
 	top: 0; bottom: 0; left: 0; right: 0; position: relative;
 	border:0; margin:0; padding:0;
 }
@@ -40,12 +40,15 @@ MinJSLib.github.io/gh-template
 
 	//startup showdownjs to reset Article contents on Manuscript changes
 	var converter = new Showdown.converter({ extensions: ['table'] });
+	var doc = Editor.getSession().getDocument();
 	Editor.getSession().on('change', function(e) {
 		document.getElementById("Article").innerHTML = converter.makeHtml(Editor.getValue())
 		//MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Article"])
 		//$("#Article").children().addClass("ui-tabs-panel ui-widget-content ui-corner-bottom");
+		// using current line-height of 14 pixels...
+		$("#Manuscript").css({"height": (14 * doc.getLength()) + 'px'});
+		Editor.resize();
 	});
-//	Editor.resize();
 };/* ]]> */</script>
 <!--____________________________________________________________--></head><body>
 <table id="Page-Table"><!--http://i.stack.imgur.com/GAZTr.jpg-->
