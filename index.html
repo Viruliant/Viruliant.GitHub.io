@@ -7,7 +7,7 @@ MinJSLib.github.io/gh-template
 <link rel="stylesheet" type="text/css" href="./default.css"/>
 <style type="text/css">/* <![CDATA[ Custom Styling*/
 #Page-Table { min-height:100%; width:100%; margin:0; }
-#Page-Table, #Content, #Left, #Right, #Header, #Footer, #Editor, #Manuscript { height:100%;
+#Page-Table, #Content, #Left, #Right, #Header, #Footer, #Manuscript, #Manuscript { height:100%;
 	top: 0; bottom: 0; left: 0; right: 0; position: relative;
 	border:0; margin:0; padding:0;
 }
@@ -32,7 +32,7 @@ MinJSLib.github.io/gh-template
 	$( "#Content" ).tabs({ event: "mouseover" });// http://jqueryui.com/tabs/
 
 	//Setup Manuscript Editor
-	var Editor = ace.edit("Editor");
+	var Editor = ace.edit("Manuscript");
 	Editor.setTheme("ace/theme/twilight");
 	Editor.getSession().setMode("ace/mode/markdown");
 	//set contents of Manuscript to "index.md" file contents
@@ -57,9 +57,7 @@ MinJSLib.github.io/gh-template
 				<ul><li><a href="#Article">Article</a></li>
 					<li><a href="#Manuscript">Manuscript</a></li></ul>
 				<div id="Article"></div>
-				<div id="Manuscript">
-					<div id="Editor"></div>
-				</div>
+				<div id="Manuscript"></div>
 			</div>
 		</td>
 		<td id="Right-cell"><div id="Right"></div></td>
