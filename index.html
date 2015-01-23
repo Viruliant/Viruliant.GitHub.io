@@ -6,10 +6,9 @@ MinJSLib.github.io/gh-template
 <link rel="stylesheet" href="./jquery-ui-1.11.2.custom/jquery-ui.theme.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="./default.css"/>
 <style type="text/css">/* <![CDATA[ Custom Styling*/
-#Page-Table { min-height:100%; width:100%; margin:0; }
-#Page-Table, #Content, #Left, #Right, #Header, #Footer { height:100%;
-	top: 0; bottom: 0; left: 0; right: 0; position: relative;
-	border:0; margin:0; padding:0;
+#Page-Table { min-height:100%; width:100%; }
+#Page-Table, #Content, #Left, #Right, #Header, #Footer {
+	height:100%; border:0; margin:0; padding:0; position: relative;
 }
 #Page-Table, #Left-cell, #Right-cell, #Content-cell, #Header-cell, #Footer-cell {
 	border:0; padding:0; border-collapse: collapse;
@@ -17,7 +16,6 @@ MinJSLib.github.io/gh-template
 #Left-cell, #Right-cell { width:10%; }
 #Content-cell { height: 100%; width:80%; }
 #Header-cell, #Footer-cell { height:35px; }
-
 #Header, #Footer { background: #FFF; }
 /* ]]> */</style>
 <!--__________________________________________________________________Scripts-->
@@ -27,6 +25,7 @@ MinJSLib.github.io/gh-template
 <script src="./ace-builds/src-min-noconflict/ace.js"></script>
 <script src="./showdown/compressed/Showdown.min.js"></script>
 <script src="./showdown/compressed/extensions/table.min.js"></script>
+<script src="./showdown/compressed/extensions/mathjax.js"></script>
 <!--<script src="requirejs/require.js"></script>-->
 <script src="./default.js"></script><script>/* <![CDATA[ Custom JS*/window.onload = function() {
 	$( "#Content" ).tabs({ event: "mouseover" });// http://jqueryui.com/tabs/
@@ -39,11 +38,11 @@ MinJSLib.github.io/gh-template
 	jQuery.get('README.md', function(data) { Editor.setValue(data); });
 
 	//startup showdownjs to reset Article contents on Manuscript changes
-	var converter = new Showdown.converter({ extensions: ['table'] });
+	var converter = new Showdown.converter({ extensions: ['table', 'mathjax'] });
 	var doc = Editor.getSession().getDocument();
 	Editor.getSession().on('change', function(e) {
-		document.getElementById("Article").innerHTML = converter.makeHtml(Editor.getValue())
-		//MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Article"])
+		$('#Article').html(converter.makeHtml(Editor.getValue()));
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Article"]);
 		//$("#Article").children().addClass("ui-tabs-panel ui-widget-content ui-corner-bottom");
 		// using current line-height of 14 pixels...
 		$("#Manuscript").css({"height": (12 * doc.getLength()) + 'px'});
