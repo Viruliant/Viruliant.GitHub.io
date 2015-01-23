@@ -41,8 +41,8 @@ MinJSLib.github.io/gh-template
 	var converter = new Showdown.converter({ extensions: ['table', 'mathjax'] });
 	var doc = Editor.getSession().getDocument();
 	Editor.getSession().on('change', function(e) {
-		$('#Article').html(converter.makeHtml(Editor.getValue()));
-		MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Article"]);
+		$('#Article').html(converter.makeHtml(Editor.getValue()))
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Article"])
 		//$("#Article").children().addClass("ui-tabs-panel ui-widget-content ui-corner-bottom");
 		// using current line-height of 14 pixels...
 		$("#Manuscript").css({"height": (12 * doc.getLength()) + 'px'});
