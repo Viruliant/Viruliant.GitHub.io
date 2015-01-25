@@ -15,4 +15,4 @@
 	url = https://github.com/ajaxorg/ace-builds
 [submodule "showdown"]
 	path = showdown
-	url = git@github.com:MinJSLib/showdown.git
+	url = https://github.com:MinJSLib/showdown.git
