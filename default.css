@@ -1,0 +1,10 @@
+html, body {	height:100%; width:100%; margin:0; border:0; padding:0;
+				vertical-align:top;
+				background:#FFFFFF url(./spin.gif) repeat center center scroll;
+/*				background:#FFFFFF none;*/
+/*				overflow:hidden; */
+}
+
+table, th, td {	margin:0; padding:0; border:1px solid #fff; border-collapse: collapse;}
+
+
