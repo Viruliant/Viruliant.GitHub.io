@@ -35,3 +35,9 @@ also used in the Grammar Spec the parser uses
 |1 |0 |0 |1 |α↔β|Biconditional |α⇔β|Exclusive Disjunction|
 |1 |1 |1 |1 |⊤ |Tautology |⊥ |Contradiction |
 
+
+"The TXL paradigm consists of parsing the input text into a structure tree,
+transforming the tree to create a new structure tree, and unparsing the new tree
+to a new output text"
+
+
