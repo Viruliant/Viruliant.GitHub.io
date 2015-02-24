@@ -16,5 +16,5 @@ $$$e^x =\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^{n} = \sum_{n=0}^{\infty} \l
 "//www.youtube.com/embed/vtLLdtBQBoI?list=PLjgrsP5Vg40lWLyr1whakzuDsmGW0el0y&loop=1&autoplay=1"
 frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 * [SVG Parameters](http://www.w3.org/TR/SVGParamPrimer) code like this:
-<object type="image/svg+xml" data="map.svg?x=400&y=130"></object>
+<object type="image/svg+xml" data="gh-template/map.svg?x=320&y=290"></object>
 
