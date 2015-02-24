@@ -2,13 +2,12 @@
 MinJSLib.github.io/gh-template
 </title><meta name="description" content="Github Pages Template using client-side JS markdown for styling  plaintext .md files">
 <!--___________________________________________________________________Styles-->
-<link rel="stylesheet" href="jquery-ui-1.11.2.custom/jquery-ui.css" type="text/css" />
-<link rel="stylesheet" href="jquery-ui-1.11.2.custom/jquery-ui.theme.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="default.css"/>
+<link rel="stylesheet" href="gh-template/jquery-ui-1.11.2.custom/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="gh-template/jquery-ui-1.11.2.custom/jquery-ui.theme.css" type="text/css" />
 <style type="text/css">/* <![CDATA[ Custom Styling*/
 	html, body {	height:100%; width:100%; margin:0; border:0; padding:0;
 					vertical-align:top;
-					background:#FFFFFF url(./spin.gif) repeat center center scroll;
+					background:#FFFFFF url(gh-template/spin.gif) repeat center center scroll;
 	/*				background:#FFFFFF none;*/
 	/*				overflow:hidden; */
 	}
@@ -30,13 +29,14 @@ MinJSLib.github.io/gh-template
 <!--__________________________________________________________________Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
-<script src="ace-builds/src-min-noconflict/ace.js"></script>
-<script src="showdown/compressed/Showdown.min.js"></script>
-<script src="showdown/compressed/extensions/table.min.js"></script>
-<script src="showdown/src/extensions/mathjax.js"></script>
+<!--<script src="gh-template/jquery-ui/ui/core.js"></script>-->
+<!--<script src="gh-template/jquery/src/core.js"></script>-->
+<script src="gh-template/mathjax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<script src="gh-template/ace-builds/src-min-noconflict/ace.js"></script>
+<script src="gh-template/showdown/compressed/Showdown.min.js"></script>
+<script src="gh-template/showdown/compressed/extensions/table.min.js"></script>
+<script src="gh-template/showdown/src/extensions/mathjax.js"></script>
 <!--<script src="requirejs/require.js"></script>-->
-<script src="default.js"></script>
 <script>/* <![CDATA[ Custom Javascript*/
 	$( window ).load(function() {
 		$( "#Content" ).tabs({ event: "mouseover" });// http://jqueryui.com/tabs/
@@ -47,7 +47,6 @@ MinJSLib.github.io/gh-template
 		Editor.getSession().setMode("ace/mode/markdown");
 		//startup showdownjs to reset Article contents on Manuscript changes
 		var converter = new Showdown.converter({ extensions: ['table', 'mathjax'] });
-		var doc = Editor.getSession().getDocument();
 		Editor.getSession().on('change', function(e) {
 			// using current line-height of 14 pixels...
 			$("#Manuscript").css({"height": (14 * Editor.getSession().getDocument().getLength()) + 'px'});
