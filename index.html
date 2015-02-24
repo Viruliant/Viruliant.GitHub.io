@@ -2,27 +2,65 @@
 MinJSLib.github.io/gh-template
 </title><meta name="description" content="Github Pages Template using client-side JS markdown for styling  plaintext .md files">
 <!--___________________________________________________________________Styles-->
-<link rel="stylesheet" href="./jquery-ui-1.11.2.custom/jquery-ui.css" type="text/css" />
-<link rel="stylesheet" href="./jquery-ui-1.11.2.custom/jquery-ui.theme.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="./default.css"/>
+<link rel="stylesheet" href="jquery-ui-1.11.2.custom/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="jquery-ui-1.11.2.custom/jquery-ui.theme.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="default.css"/>
 <style type="text/css">/* <![CDATA[ Custom Styling*/
+	html, body {	height:100%; width:100%; margin:0; border:0; padding:0;
+					vertical-align:top;
+					background:#FFFFFF url(./spin.gif) repeat center center scroll;
+	/*				background:#FFFFFF none;*/
+	/*				overflow:hidden; */
+	}
+
+	table, th, td {	margin:0; padding:0; border:1px solid #fff; border-collapse: collapse;}
+
+	#Page-Table { min-height:100%; width:100%; }
+	#Page-Table, #Content, #Left, #Right, #Header, #Footer {
+		height:100%; border:0; margin:0; padding:0; position: relative;
+	}
+	#Page-Table, #Left-cell, #Right-cell, #Content-cell, #Header-cell, #Footer-cell {
+		border:0; padding:0; border-collapse: collapse;
+	}
+	#Left-cell, #Right-cell { width:10%; }
+	#Content-cell { height: 100%; width:80%; }
+	#Header-cell, #Footer-cell { height:35px; }
+	#Header, #Footer { background: #FFF; }
 /* ]]> */</style>
 <!--__________________________________________________________________Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
-<script src="./ace-builds/src-min-noconflict/ace.js"></script>
-<script src="./showdown/compressed/Showdown.min.js"></script>
-<script src="./showdown/compressed/extensions/table.min.js"></script>
-<script src="./showdown/src/extensions/mathjax.js"></script>
+<script src="ace-builds/src-min-noconflict/ace.js"></script>
+<script src="showdown/compressed/Showdown.min.js"></script>
+<script src="showdown/compressed/extensions/table.min.js"></script>
+<script src="showdown/src/extensions/mathjax.js"></script>
 <!--<script src="requirejs/require.js"></script>-->
-<script src="./default.js"></script>
-<script>/* <![CDATA[ Custom JS*/$( window ).load(function() {
-	$( "#Content" ).tabs({ event: "mouseover" });// http://jqueryui.com/tabs/
+<script src="default.js"></script>
+<script>/* <![CDATA[ Custom Javascript*/
+	$( window ).load(function() {
+		$( "#Content" ).tabs({ event: "mouseover" });// http://jqueryui.com/tabs/
 
-	//set contents of global Editor var to "index.md" file contents
-	jQuery.get('README.md', function(data) { Editor.setValue(data); });
-});/* ]]> */</script>
+		//Setup Manuscript Editor
+		var Editor; Editor = ace.edit("Manuscript");
+		Editor.setTheme("ace/theme/twilight");
+		Editor.getSession().setMode("ace/mode/markdown");
+		//startup showdownjs to reset Article contents on Manuscript changes
+		var converter = new Showdown.converter({ extensions: ['table', 'mathjax'] });
+		var doc = Editor.getSession().getDocument();
+		Editor.getSession().on('change', function(e) {
+			// using current line-height of 14 pixels...
+			$("#Manuscript").css({"height": (14 * Editor.getSession().getDocument().getLength()) + 'px'});
+			Editor.resize();
+			$('#Article').html(converter.makeHtml(Editor.getValue()));
+			MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Article"]);
+			//$("#Article").children().addClass("ui-tabs-panel ui-widget-content ui-corner-bottom");
+		});
+
+		//set contents of global Editor var to "README.md" file contents
+		jQuery.get('README.md', function(data) { Editor.setValue(data); });
+	});
+/* ]]> */</script>
 <!--____________________________________________________________--></head><body>
 <table id="Page-Table"><!--http://i.stack.imgur.com/GAZTr.jpg-->
 	<tr><td id="Header-cell" colspan="3"><div id="Header"></div></td></tr>
