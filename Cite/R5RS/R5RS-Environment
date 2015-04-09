@@ -1,5 +1,17 @@
 Index of R5RS Default Environment Documentation
 
+Force Delay Derived expressions & macros
+	if	10, 41
+	else	10
+	do	12, 44
+	begin	12, 16, 44
+	case	10, 43
+	for-each	32
+	map	32
+	catch	34
+	cond	10, 15, 43
+		=>	10
+
 Input Output Procedures
 	eof-object?	36
 	port?	6

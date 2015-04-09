@@ -13,16 +13,7 @@
 (define (atom? x) (not (pair? x)))(define (stream-null? x) (null? x))
 (define (identity x) x)(define the-empty-stream '())(define mapcar map)
 (define-syntax cons-stream (syntax-rules () ((_ A B) (cons A (delay B)))))
-;SICP 4.3.1 amb from Matt Might @ goo.gl/i0fSeQ
-(define (current-continuation)(call/cc (λ (cc) (cc cc))))(define fail-stack '())
-(define (assert condition) (if (not condition) (fail) #t))
-(define (fail); fail : -> ...
-	(if (not (pair? fail-stack))
-		(error "back-tracking stack exhausted!")
-		(begin
-			(let ((back-track-point (car fail-stack)))
-				(set! fail-stack (cdr fail-stack))
-				(back-track-point back-track-point)))))
+;'amb' from Matt Might @ goo.gl/i0fSeQ for use with SICP §4.3.1
 (define (amb choices); amb : list[a] -> a
 	(let ((cc (current-continuation)))
 		(cond	((null? choices) (fail))
@@ -30,6 +21,15 @@
 					(set! choices (cdr choices))
 					(set! fail-stack (cons cc fail-stack))
 					choice)))))
+(define fail-stack '())(define (fail); fail : -> ...
+	(if (not (pair? fail-stack))
+		(error "back-tracking stack exhausted!")
+		(begin
+			(let ((back-track-point (car fail-stack)))
+				(set! fail-stack (cdr fail-stack))
+				(back-track-point back-track-point)))))
+(define (assert condition) (if (not condition) (fail) #t))
+(define (current-continuation)(call/cc (λ (cc) (cc cc))))
 ;__________________________________________________________________goo.gl/i0fSeQ
 
 ; The following prints (4 3 5)
@@ -53,6 +53,22 @@
 
 
 
+(define (multiple-dwelling)
+  (let ((baker    (amb 1 2 3 4 5)) (cooper (amb 1 2 3 4 5))
+        (fletcher (amb 1 2 3 4 5)) (miller (amb 1 2 3 4 5))
+        (smith    (amb 1 2 3 4 5)))
+    (assert
+     (distinct? (list baker cooper fletcher miller smith)))
+    (assert (not (= baker 5)))
+    (assert (not (= cooper 1)))
+    (assert (not (= fletcher 5)))
+    (assert (not (= fletcher 1)))
+    (assert (> miller cooper))
+    (assert (not (= (abs (- smith fletcher)) 1)))
+    (assert (not (= (abs (- fletcher cooper)) 1)))
+    (list (list 'baker baker)       (list 'cooper cooper)
+          (list 'fletcher fletcher) (list 'miller miller)
+          (list 'smith smith))))
 
 
 

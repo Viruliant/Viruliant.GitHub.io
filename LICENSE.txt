@@ -1,5 +1,10 @@
-﻿0________________________________________________________________________LICENSE
-   Copyright © 2014 Roy Pfund                            All rights reserved.
+0________________________________________________________________________LICENSE
+
+                               Viruliant License
+                            Version 1.0, April 2015
+                   http://Viruliant.Github.io/LICENSE-1.0.txt
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
    Permission is hereby granted, free of charge, to any  person  obtaining  a
    copy of this software and associated documentation files (the "Software"),
@@ -35,11 +40,17 @@ The original MIT license with the "All trademarks . . .  service  mark."  clause
 found at "http://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.html" added in.
 
 1____________________________________________________________________BOILERPLATE
-Copyright © 2014 Roy Pfund                                  All rights reserved.
-Use of this software and associated documentation  files  (the  "Software"),  is
-governed by a MIT-style License(the "License") that can be found in the  LICENSE
-file. You should have received a copy of the License along with  this  Software.
-If not, see http://Viruliant.googlecode.com/git/LICENSE.txt
+
+    Copyright © [yyyy] [name of copyright owner]
+    All rights reserved.
+
+    Use of this software and  associated  documentation  files  (the
+    "Software"), is governed by a MIT-style  License(the  "License")
+    that can be found in the LICENSE file. You should have  received
+    a copy of the License along with this Software. If not, see
+
+        http://Viruliant.Github.io/LICENSE-1.0.txt
+    ________________________________________________________________
 
 1.1___________________________________________________________BOILERPLATE DESIGN
 The following text/sources influenced the boilerplate
@@ -58,11 +69,6 @@ License(the "License")
 
 this software and associated documentation files (the "Software")
 	--MIT
-
-1.2________________________________________________CREATING YOUR OWN BOILERPLATE
-(NOT WORKING YET)
-I'm not goin to explain this:
-http://someurl.com/MIT.txt?years=&Copyright_Owners=
 
 When in doubt copright everything and disallow use of anything also requiring  a
 signature of an NDA to even view any of your code. When not living in complete &

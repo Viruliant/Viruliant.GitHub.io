@@ -1,10 +1,14 @@
 #!/usr/bin/scheme-r5rs -:s
 ;________________________________________________________________________LICENSE
-;Copyright © 2014 Roy Pfund                                 All rights reserved.
-;Use of this software and associated documentation  files  (the  "Software"), is
-;governed by a MIT-style License(the "License") that can be found in the LICENSE
-;file. You should have received a copy of the License along with this  Software.
-;If not, see http://Viruliant.googlecode.com/git/LICENSE.txt
+;   Copyright © 2014-2015 Roy Pfund             All rights reserved.
+;
+;   Use of this software and  associated  documentation  files  (the
+;   "Software"), is governed by a MIT-style  License(the  "License")
+;   that can be found in the LICENSE file. You should have  received
+;   a copy of the License along with this Software. If not, see
+;
+;       http://Viruliant.Github.io/LICENSE-1.0.txt
+;
 ;_________________________________________________________R5RS SICP Compatiblity
 ;SICP-Book: goo.gl/gYF0pW SICP-Video-Lectures: goo.gl/3uwWXK R5RS: goo.gl/z6HMWx
 (define-syntax λ (syntax-rules () ((_ param body ...) (lambda param body ...))))
@@ -13,21 +17,22 @@
 (define (atom? x) (not (pair? x)))(define (stream-null? x) (null? x))
 (define (identity x) x)(define the-empty-stream '())(define mapcar map)
 (define-syntax cons-stream (syntax-rules () ((_ A B) (cons A (delay B)))))
-;__________________________________________________________________goo.gl/i0fSeQ
-(define (current-continuation)(call/cc (λ (cc) (cc cc))))(define fail-stack '())
-(define (assert condition) (if (not condition) (fail) #t))
-(define (fail) (if (not (pair? fail-stack)); fail : -> ...
-		(error "back-tracking stack exhausted!")
-		(begin
-			(let ((back-track-point (car fail-stack)))
-				(set! fail-stack (cdr fail-stack))
-				(back-track-point back-track-point)))))
-(define (amb choices) (let ((cc (current-continuation))); amb : list[a] -> a
+(define (amb choices);'amb' from goo.gl/i0fSeQ for use with SICP §4.3.1
+	(let ((cc (current-continuation)))
 		(cond	((null? choices) (fail))
 				((pair? choices) (let ((choice (car choices)))
 					(set! choices (cdr choices))
 					(set! fail-stack (cons cc fail-stack))
 					choice)))))
+(define fail-stack '())    (define (fail); fail : -> ...
+	(if (not (pair? fail-stack))
+		(error "back-tracking stack exhausted!")
+		(begin
+			(let ((back-track-point (car fail-stack)))
+				(set! fail-stack (cdr fail-stack))
+				(back-track-point back-track-point)))))
+(define (assert condition) (if (not condition) (fail) #t))
+(define (current-continuation)(call/cc (λ (cc) (cc cc))))
 ;________________________________________________________________________RFC3629
 (define (24bit x) (bitor x #x000000))
 (define (32bit x) (bitor x #x00000000))
