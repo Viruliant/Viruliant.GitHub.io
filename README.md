@@ -1,8 +1,11 @@
-Copyright © 2014 Roy Pfund All rights reserved.
-Use of this software and associated documentation files (the "Software"), is
-governed by a MIT-style License(the "License") that can be found in the LICENSE
-file. You should have received a copy of the License along with this Software.
-If not, see http://Viruliant.googlecode.com/git/LICENSE.txt
+Copyright © 2014-2015 Roy Pfund             All rights reserved.
+
+Use of this software and  associated  documentation  files  (the
+"Software"), is governed by a MIT-style  License(the  "License")
+that can be found in the LICENSE file. You should have  received
+a copy of the License along with this Software. If not, see
+
+    http://Viruliant.Github.io/LICENSE-1.0.txt
 
 Viruliant
 ---------
@@ -62,3 +65,4 @@ This project MIGHT depend on the following wonderful software:
 * https://github.com/rustyrussell/ccan/tree/master/ccan/antithread
 * https://github.com/cheusov/mk-configure
 * bmake
+
