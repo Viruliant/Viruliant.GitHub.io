@@ -9,6 +9,8 @@ a copy of the License along with this Software. If not, see
 
 Viruliant
 ---------
+
+[![Join the chat at https://gitter.im/Viruliant/Viruliant.GitHub.io](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Viruliant/Viruliant.GitHub.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Viruliant aims to be an SharedLibrary/Executable made to translate from a
 [Subset of R5RS](/Cite/R5RS/R5RS-Language) to [C99](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf)"
 in a similar fashion, to how OOP has been added to C99 in
