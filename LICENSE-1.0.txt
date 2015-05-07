@@ -2,7 +2,7 @@
 
                                Viruliant License
                             Version 1.0, April 2015
-                   http://Viruliant.Github.io/LICENSE-1.0.txt
+                   http://Viruliant.GitHub.io/LICENSE-1.0.txt
 
    TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
@@ -49,7 +49,7 @@ found at "http://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.html" added in.
     that can be found in the LICENSE file. You should have  received
     a copy of the License along with this Software. If not, see
 
-        http://Viruliant.Github.io/LICENSE-1.0.txt
+        http://Viruliant.GitHub.io/LICENSE-1.0.txt
     ________________________________________________________________
 
 1.1___________________________________________________________BOILERPLATE DESIGN
@@ -70,7 +70,7 @@ License(the "License")
 this software and associated documentation files (the "Software")
 	--MIT
 
-When in doubt copright everything and disallow use of anything also requiring  a
+When in doubt copyright everything and disallow use of anything also requiring a
 signature of an NDA to even view any of your code. When not living in complete &
 utter fear of your friends, competitors, & neighbors; use this license.
 

@@ -26,10 +26,10 @@ waded through muck)](http://youtu.be/h6Z7vx9iUB8?t=1h17m33s).
 
 Ways You Can Help
 -----------------
-* Help me solve [Issues from the Issue Tracker]().
-* "[Submit A New Issue]()".
+* Help me solve [Issues from the Issue Tracker](https://github.com/Viruliant/Viruliant.GitHub.io/issues),
+and "[Submit A New Issue](https://github.com/Viruliant/Viruliant.GitHub.io/issues/new)" if you do not see it listed there.
 * If you like this project and/or want to see more projects like it:
-  Please Donate via [Bitcoin]() or [Paypal]().
+  Please Donate via [Bitcoin]() or [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=adamantapparition%40gmail%2ecom&lc=US&no_note=0&cn=Add%20a%20note%20to%20the%20Donation%3a&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted).
 
 More Information
 ----------------
