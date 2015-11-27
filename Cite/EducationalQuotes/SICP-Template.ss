@@ -1,54 +1,54 @@
 #!/usr/bin/scheme-r5rs -:s
 ;________________________________________________________________________LICENSE
-;   Copyright © 2014-2015 Roy Pfund             All rights reserved.
-;
-;   Use of this software and  associated  documentation  files  (the
-;   "Software"), is governed by a MIT-style  License(the  "License")
-;   that can be found in the LICENSE file. You should have  received
-;   a copy of the License along with this Software. If not, see
-;
-;       http://Viruliant.Github.io/LICENSE-1.0.txt
-;
+;    Use of this software and  associated  documentation  files  (the
+;    "Software"), is governed by the Creative Commons  Public  Domain
+;    License(the "License"). You may obtain a copy of the License at:
+;        https://creativecommons.org/licenses/publicdomain/
 ;_________________________________________________________R5RS SICP Compatiblity
 ;SICP-Book: goo.gl/gYF0pW SICP-Video-Lectures: goo.gl/3uwWXK R5RS: goo.gl/z6HMWx
-(define-syntax λ (syntax-rules () ((_ param body ...) (lambda param body ...))))
-(define user-initial-environment (scheme-report-environment 5))(define false #f)
-(define true #t)(define (inc x)(+ x 1))(define (dec x)(- x 1))(define nil '())
-(define (atom? x) (not (pair? x)))(define (stream-null? x) (null? x))
-(define (identity x) x)(define the-empty-stream '())(define mapcar map)
-(define-syntax cons-stream (syntax-rules () ((_ A B) (cons A (delay B)))))
-(define (amb choices);'amb' from goo.gl/i0fSeQ for use with SICP §4.3.1
-	(let ((cc (current-continuation)))
-		(cond	((null? choices) (fail))
-				((pair? choices) (let ((choice (car choices)))
-					(set! choices (cdr choices))
-					(set! fail-stack (cons cc fail-stack))
-					choice)))))
-(define fail-stack '())    (define (fail); fail : -> ...
-	(if (not (pair? fail-stack))
-		(error "back-tracking stack exhausted!")
-		(begin
-			(let ((back-track-point (car fail-stack)))
-				(set! fail-stack (cdr fail-stack))
-				(back-track-point back-track-point)))))
-(define (assert condition) (if (not condition) (fail) #t))
-(define (current-continuation)(call/cc (λ (cc) (cc cc))))
+(load "SICP.ss")
+;____________________________________________________________________SICP §4.3.1
+;Baker, Cooper, Fletcher, Miller, and Smith live on different floors of an
+;apartment house that contains only five floors. Baker does not live on the top
+;floor. Cooper does not live on the bottom floor. Fletcher does not live on
+;either the top or the bottom floor. Miller lives on a higher floor than does
+;Cooper. Smith does not live on a floor adjacent to Fletcher’s. Fletcher does
+;not live on a floor adjacent to Cooper’s. Where does everyone live?
+
+(define (multiple-dwelling)
+  (let ((baker    (amb (list 1 2 3 4 5))) (cooper (amb (list 1 2 3 4 5)))
+        (fletcher (amb (list 1 2 3 4 5))) (miller (amb (list 1 2 3 4 5)))
+        (smith    (amb (list 1 2 3 4 5))))
+
+    ;don't allow them to be on the same floor'
+;    (assert (distinct? (list baker cooper fletcher miller smith)))
+    (assert (not (= baker cooper)))(assert (not (= baker fletcher)))(assert (not (= baker miller)))(assert (not (= baker smith)))
+    (assert (not (= cooper fletcher)))(assert (not (= cooper miller)))(assert (not (= cooper smith)))
+    (assert (not (= fletcher miller)))(assert (not (= fletcher smith)))
+    (assert (not (= miller smith)))
+;	for each j=0 to n
+;		for each y=j+1 to n
+;			(assert (not (= j y)))
+
+    (assert (not (= baker 5)))
+    (assert (not (= cooper 1)))
+    (assert (not (= fletcher 5)))
+    (assert (not (= fletcher 1)))
+    (assert (> miller cooper))
+    (assert (not (= (abs (- smith fletcher)) 1)))
+    (assert (not (= (abs (- fletcher cooper)) 1)))
+    (list (list 'baker baker)       (list 'cooper cooper)
+          (list 'fletcher fletcher) (list 'miller miller)
+          (list 'smith smith))))
+
+(display-all (multiple-dwelling) "\n")
 ;____________________________________________________I have a lovely bunch of λs
 
-;(define (display-all . x)(for-each display x))
+;(define (display-all . x)(for-each display x)) was added to the 
 ;(display-all "\n" ((λ (x y) (+ x y)) 1 2)
 ;	"\nI " "have " "a " "lovely " "bunch " "of " "λs\n")
-(for-each display '("\nI " "have " "a " "lovely " "bunch " "of " "λs\n"))
+;(for-each display '("\nI " "have " "a " "lovely " "bunch " "of " "λs\n"))
 
-;This Template provides the following for compatibilty with SICP:
-;λ user-initial-environment mapcar atom? true false inc dec nil identity
-;the-empty-stream stream-null? cons-stream
-
-;;TODO
-;;still need to provide:
-;;error sicp-syntax-error random
-;(define-syntax error (syntax-rules () ((_ REASON ARG ...) (error REASON ARG ...))))
-;(define-syntax sicp-syntax-error (syntax-rules () ((_) #f)))
 
 
 ;;;; Return the first element in LST for which WANTED? returns a true value.

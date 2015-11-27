@@ -41,7 +41,7 @@ found at "http://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.html" added in.
 
 1____________________________________________________________________BOILERPLATE
 
-    Copyright © [yyyy] [name of copyright owner]
+    Copyright © [yyyy-yyyy] [name of copyright owner]
     All rights reserved.
 
     Use of this software and  associated  documentation  files  (the
