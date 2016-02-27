@@ -2,8 +2,8 @@
 
 ______________
 
-Code@[github.com/MinJSLib/gh-template](https://github.com/MinJSLib/gh-template)  
-Demo@[minjslib.github.io/gh-template](http://minjslib.github.io/gh-template/)
+Code@[github.com/Viruliant/gh-template](http://github.com/Viruliant/gh-template)  
+Demo@[viruliant.github.io/gh-template](http://viruliant.github.io/gh-template)
 
 This is a template to allow you to do almost anything, including on your own server. Just use [NodeJS](http://nodejs.org/) and the included `gh-template-node.js` file
 
