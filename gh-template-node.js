@@ -1,4 +1,4 @@
-//you may have to install nodejs & run 'npm install http-server' to get this to run
+//you may have to install nodejs & run 'npm install http-server --save-dev' to get this to run
 var	httpServer = require('http-server');
 
 var server = httpServer.createServer({});
