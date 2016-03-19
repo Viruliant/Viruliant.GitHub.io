@@ -1,9 +1,6 @@
 [submodule "ace-builds"]
 	path = gh-template/ace-builds
 	url = https://github.com/ajaxorg/ace-builds.git
-[submodule "showdown"]
-	path = gh-template/showdown
-	url = https://github.com/MinJSLib/showdown.git
 [submodule "gh-template/mathjax"]
 	path = gh-template/mathjax
 	url = https://github.com/mathjax/mathjax
@@ -13,3 +10,6 @@
 [submodule "gh-template/jquery-ui"]
 	path = gh-template/jquery-ui
 	url = https://github.com/jquery/jquery-ui
+[submodule "showdown"]
+	path = gh-template/showdown
+	url = https://github.com/Viruliant/showdown.git
