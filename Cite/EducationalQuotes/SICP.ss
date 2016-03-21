@@ -16,7 +16,7 @@
 ;the-empty-stream stream-null? cons-stream
 
 ;;TODO Still need to provide:
-;distinct? error sicp-syntax-error random
+;error sicp-syntax-error random
 
 ;(define-syntax error (syntax-rules () ((_ REASON ARG ...) (error REASON ARG ...))))
 ;(define-syntax sicp-syntax-error (syntax-rules () ((_) #f)))
@@ -34,7 +34,7 @@
 (define mapcar map)
 (define-syntax cons-stream (syntax-rules () ((_ A B) (cons A (delay B)))))
 
-;_________________'amb' from Matt Might @ goo.gl/i0fSeQ for use with SICP §4.3.1
+;___________________'amb' from Matt Might @ goo.gl/i0fSeQ for use with SICP §4.3
 (define (amb choices); amb : list[a] -> a
 	(let ((cc (current-continuation)))
 		(cond	((null? choices) (fail))
@@ -50,6 +50,11 @@
 				(set! fail-stack (cdr fail-stack))
 				(back-track-point back-track-point)))))
 (define (assert condition) (if (not condition) (fail) #t))
+(define (distinct? items) (cond
+	((null? items) true)
+	((null? (cdr items)) true)
+	((member (car items) (cdr items)) false)
+	(else (distinct? (cdr items)))))
 (define (current-continuation)(call/cc (λ (cc) (cc cc))))
 
 ;__________________Not in the spec for good reason but very useful for beginners

@@ -21,15 +21,7 @@
         (smith    (amb (list 1 2 3 4 5))))
 
     ;don't allow them to be on the same floor'
-;    (assert (distinct? (list baker cooper fletcher miller smith)))
-    (assert (not (= baker cooper)))(assert (not (= baker fletcher)))(assert (not (= baker miller)))(assert (not (= baker smith)))
-    (assert (not (= cooper fletcher)))(assert (not (= cooper miller)))(assert (not (= cooper smith)))
-    (assert (not (= fletcher miller)))(assert (not (= fletcher smith)))
-    (assert (not (= miller smith)))
-;	for each j=0 to n
-;		for each y=j+1 to n
-;			(assert (not (= j y)))
-
+    (assert (distinct? (list baker cooper fletcher miller smith)))
     (assert (not (= baker 5)))
     (assert (not (= cooper 1)))
     (assert (not (= fletcher 5)))
