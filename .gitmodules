@@ -1,15 +1,15 @@
 [submodule "ace-builds"]
-	path = gh-template/ace-builds
+	path = gh-pages-rsrcs/ace-builds
 	url = https://github.com/ajaxorg/ace-builds.git
-[submodule "gh-template/mathjax"]
-	path = gh-template/mathjax
+[submodule "gh-pages-rsrcs/mathjax"]
+	path = gh-pages-rsrcs/mathjax
 	url = https://github.com/mathjax/mathjax
-[submodule "gh-template/jquery"]
-	path = gh-template/jquery
+[submodule "gh-pages-rsrcs/jquery"]
+	path = gh-pages-rsrcs/jquery
 	url = https://github.com/jquery/jquery
-[submodule "gh-template/jquery-ui"]
-	path = gh-template/jquery-ui
+[submodule "gh-pages-rsrcs/jquery-ui"]
+	path = gh-pages-rsrcs/jquery-ui
 	url = https://github.com/jquery/jquery-ui
 [submodule "showdown"]
-	path = gh-template/showdown
+	path = gh-pages-rsrcs/showdown
 	url = https://github.com/Viruliant/showdown.git
