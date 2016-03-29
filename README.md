@@ -13,7 +13,12 @@ ________________________________________________________________
 > Hostly possessing courage & determination; extremely severe in its effects.
 ___
 
-In the spirit of [falling out for free](http://youtu.be/h6Z7vx9iUB8?t=1h17m33s),
+In the spirit of:
+
+ * ["falling out for free" --1986SICPLec4](http://youtu.be/h6Z7vx9iUB8?t=1h17m33s)
+ * ["how to have our cake in functional style and eat it too"(limited by a dragging tail) --1986SICPLec6](https://youtu.be/a2Qt9uxhNSM?t=46m7s)
+ * ["using logic to express what is true, you use logic to check whether something is true, and you use logic to find out what is true." --1986SICPLec8](https://youtu.be/cyVXjnFL2Ps?t=18m)
+
 Viruliant is an SharedLibrary made to translate from a [Subset](/Cite/R5RS/R5RS-Language)
 of the [R5RS Scheme Languge](/Cite/R5RS/R5RS Specification.pdf)
 to [C99](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf).
