@@ -13,28 +13,21 @@ ________________________________________________________________
 > Hostly possessing courage & determination; extremely severe in its effects.
 ___
 
+[Sorenson's Acoustic DUAL Piano Scheme Setup Video(NOT in Stereo)](http://youtu.be/yY1FSsUV-8c?t=140s)
+shall serve as a layman's description of what a live Scheme interpreter/translator/compiler can look like;
+It is also an Excellent Musical Piece, w/Narration of how his code generates it(you may also wish to rewind it, to hear more details).
+
 In the spirit of:
 
  * ["falling out for free" --1986SICPLec4](http://youtu.be/h6Z7vx9iUB8?t=1h17m33s)
  * ["how to have our cake in functional style and eat it too"(limited by a dragging tail) --1986SICPLec6](https://youtu.be/a2Qt9uxhNSM?t=46m7s)
  * ["using logic to express what is true, you use logic to check whether something is true, and you use logic to find out what is true." --1986SICPLec8](https://youtu.be/cyVXjnFL2Ps?t=18m)
+ * [Ben Swift Debugging AND Recompiling the currently running application.](http://vimeo.com/99891379)
 
-Viruliant is an SharedLibrary made to translate from a [Subset](/Cite/R5RS/R5RS-Language)
-of the [R5RS Scheme Languge](/Cite/R5RS/R5RS Specification.pdf)
-to [C99](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf).
-[Sorenson's Acoustic DUAL Piano Scheme Setup Video(NOT in Stereo)](http://youtu.be/yY1FSsUV-8c?t=140s)
-shall serve as a layman's description of what a live Scheme interpreter or
-compiler can look like; It is also an Excellent Musical Piece, w/Narration of
-how his code generates it.
-
-In a similar fashion, to how OOP has been added to C99 in
-[Object-oriented design patterns in the kernel, part 1](http://lwn.net/Articles/444910/)
-and [part 2](http://lwn.net/Articles/446317/).
-Viruliant is also to provide the abilities seen in [Ben Swift Debugging AND
-Recompiling the currently running application](http://vimeo.com/99891379).
-[AntiThread](https://github.com/rustyrussell/ccan/tree/master/ccan/antithread) &
-[mkconfExample](Cite/mkconfExample) will serve as quotes & libs of part of how
-generated code will appear.
+Viruliant is to provide a [Subset](/Cite/R5RS/R5RS-Language) of the [R5RS Scheme Languge](/Cite/R5RS/R5RS Specification.pdf) by either direct lambda calculus, interpreting, or translating to [C99](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf) in a similar fashion as how OOP has been added to C99 in
+[Object-oriented design patterns in the kernel, part 1](http://lwn.net/Articles/444910/) and [part 2](http://lwn.net/Articles/446317/).
+[AntiThread](https://github.com/rustyrussell/ccan/tree/master/ccan/antithread), &
+[mkconfExample](Cite/mkconfExample).
 
 ###Ways You Can Participate
 * **Chat** @ [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Viruliant/Viruliant.GitHub.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
