@@ -15,7 +15,7 @@ ___
 
 [Sorenson's Acoustic DUAL Piano Scheme Setup Video(NOT in Stereo)](http://youtu.be/yY1FSsUV-8c?t=140s)
 shall serve as a layman's description of what a live Scheme interpreter/translator/compiler can look like;
-It is also an Excellent Musical Piece, w/Narration of how his code generates it(you may also wish to rewind it, to hear more details).
+It is also an Excellent Musical Piece, w/Narration of how his code generates it(you may also wish to rewind it to the begining, to hear more details).
 
 In the spirit of:
 
@@ -30,8 +30,9 @@ Viruliant is to provide a [Subset](/Cite/R5RS/R5RS-Language) of the [R5RS Scheme
 [mkconfExample](Cite/mkconfExample).
 
 ###Ways You Can Participate
+* **Share** [the Website](https://Viruliant.GitHub.io)
 * **Chat** @ [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Viruliant/Viruliant.GitHub.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-* **View** [the code](https://github.com/Viruliant/Viruliant.GitHub.io)
+* **View** [the Code](https://github.com/Viruliant/Viruliant.GitHub.io)
 * **Solve** [Issues from the Issue Tracker](https://github.com/Viruliant/Viruliant.GitHub.io/issues),
 * **Submit** a [New Issue](https://github.com/Viruliant/Viruliant.GitHub.io/issues/new) if you do not see it listed there.
 * **Donate** via [Bitcoin]() or [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=adamantapparition%40gmail%2ecom&lc=US&no_note=0&cn=Add%20a%20note%20to%20the%20Donation%3a&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted),
