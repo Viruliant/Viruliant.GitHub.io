@@ -29,6 +29,9 @@ Viruliant is to provide a [Subset](/Cite/R5RS/R5RS-Language) of the [R5RS Scheme
 [AntiThread](https://github.com/rustyrussell/ccan/tree/master/ccan/antithread), &
 [mkconfExample](Cite/mkconfExample).
 
+However for now nothing is WORKING yet, so if you want to experiment or learn I would suggest you download the [SICP-Template.ss](Cite/EducationalQuotes/SICP-Template.ss) file and the corresponding [SICP.ss](Cite/EducationalQuotes/SICP.ss) compatiblity file,  
+and start working with examples from the 1984 SICP book linked in the runnable template file, and download a WORKING environment like [Gambit](http://gambitscheme.org/wiki/index.php/Main_Page), [TinySCHEME](https://github.com/Viruliant/TinySCHEME), [Impromptu](http://impromptu.moso.com.au/), [Extempore](http://extempore.moso.com.au/), or any other R5RS compatible distribution.
+
 ###Ways You Can Participate
 * **Share** [the Website](https://Viruliant.GitHub.io)
 * **Chat** @ [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Viruliant/Viruliant.GitHub.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
