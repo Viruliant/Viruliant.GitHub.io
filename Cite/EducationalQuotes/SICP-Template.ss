@@ -1,13 +1,12 @@
-#!/usr/bin/scheme-r5rs -:s
+;#!/usr/bin/scheme-r5rs -:s
 ;________________________________________________________________________LICENSE
 ;    Use of this software and  associated  documentation  files  (the
 ;    "Software"), is governed by the Creative Commons  Public  Domain
 ;    License(the "License"). You may obtain a copy of the License at:
 ;        https://creativecommons.org/licenses/publicdomain/
-;_________________________________________________________R5RS SICP Compatiblity
+(load "SICP.ss");<-__________________________________R5RS SICP Compatiblity file
 ;SICP-Book: goo.gl/gYF0pW SICP-Video-Lectures: goo.gl/3uwWXK R5RS: goo.gl/z6HMWx
-(load "SICP.ss")
-;____________________________________________________________________SICP §4.3.1
+;____________________________________________________________________SICP §4.3.2
 ;Baker, Cooper, Fletcher, Miller, and Smith live on different floors of an
 ;apartment house that contains only five floors. Baker does not live on the top
 ;floor. Cooper does not live on the bottom floor. Fletcher does not live on
@@ -19,16 +18,14 @@
   (let ((baker    (amb (list 1 2 3 4 5))) (cooper (amb (list 1 2 3 4 5)))
         (fletcher (amb (list 1 2 3 4 5))) (miller (amb (list 1 2 3 4 5)))
         (smith    (amb (list 1 2 3 4 5))))
-
-    ;don't allow them to be on the same floor'
-    (assert (distinct? (list baker cooper fletcher miller smith)))
-    (assert (not (= baker 5)))
-    (assert (not (= cooper 1)))
-    (assert (not (= fletcher 5)))
-    (assert (not (= fletcher 1)))
-    (assert (> miller cooper))
-    (assert (not (= (abs (- smith fletcher)) 1)))
-    (assert (not (= (abs (- fletcher cooper)) 1)))
+    (assert (distinct? (list baker cooper fletcher miller smith)));live on different floors
+    (assert (not (= baker 5)));Baker does not live on the top floor.
+    (assert (not (= cooper 1)));Cooper does not live on the bottom floor.
+    (assert (not (= fletcher 5)));Fletcher not ontop or bottom floor
+    (assert (not (= fletcher 1)));Fletcher not ontop or bottom floor
+    (assert (> miller cooper));Miller on higher floor than Cooper
+    (assert (not (= (abs (- smith fletcher)) 1)));Smith not adjacent to Fletcher
+    (assert (not (= (abs (- fletcher cooper)) 1)));Fletcher not adjacent to Cooper
     (list (list 'baker baker)       (list 'cooper cooper)
           (list 'fletcher fletcher) (list 'miller miller)
           (list 'smith smith))))
