@@ -1,4 +1,4 @@
-Copyright © 2014-2015 Roy Pfund             All rights reserved.
+Copyright © 2014-2023 Roy Pfund             All rights reserved.
 
 Use of this software and  associated  documentation  files  (the
 "Software"), is governed by a MIT-style  License(the  "License")
